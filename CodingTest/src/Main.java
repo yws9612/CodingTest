@@ -16,7 +16,7 @@ public class Main {
         tree.root.rt.lt = new Node(5);
         tree.root.rt.rt = new Node(6);
 
-        tree.DFS(tree.root);
+        tree.BFS(tree.root);
     }
 
     //DFS
