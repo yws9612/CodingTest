@@ -27,11 +27,11 @@ public class CodingTestEx {
             branch[a][b] = branch[b][a] = 1;
         }
 
-        dfs(V); //dfs 함수 호출
-        System.out.println();
+//        dfs(V); //dfs 함수 호출
+//        System.out.println();
 
 //        Arrays.fill(visit, false);
-//        bfs(V);
+        bfs(V);
     }
 
     public static void dfs(int start) {
@@ -47,18 +47,18 @@ public class CodingTestEx {
 
     public static void bfs(int start) {
         queue = new LinkedList<Integer>();
-        queue.add(start);
-        visit[start] = true;
-        System.out.print(start + " ");
+        queue.add(start); //queue에 인자 값 추가
+        visit[start] = true; //추가된 인자 값 true 설정
+        System.out.print(start + " "); //최초 시작 값 출력
 
-        while (!queue.isEmpty()) {
-            int temp = queue.poll();
+        while (!queue.isEmpty()) { //queue가 빌 때 까지
+            int temp = queue.poll(); //방문한 인자를 큐에서 제거 및 제거된 인자 값을 temp에 저장
 
             for (int i = 1; i < branch.length; i++) {
                 if (branch[temp][i] == 1 && visit[i] == false) {
-                    queue.add(i);
-                    visit[i] = true;
-                    System.out.print(i + " ");
+                    queue.add(i); //인접 노드 추가
+                    visit[i] = true; //추가된 노드는 중복추가되지 않도록 true로 설정
+                    System.out.print(i + " "); // 결과값 출력
                 }
             }
         }
