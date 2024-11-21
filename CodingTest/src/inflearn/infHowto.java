@@ -3,6 +3,11 @@ package inflearn;
 public class infHowto {
     public static void main(String[] args) {
         /*
+        1) 문제 이해하기
+        2) 접근 방법
+        3) 코드 설계
+        4) 코드 구현
+
         문제 해석 후 접근 방법
         1. 직관적으로 생각
             ㄴ 보통 완전 탐색으로 시작
