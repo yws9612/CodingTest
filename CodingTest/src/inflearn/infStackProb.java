@@ -17,6 +17,10 @@ public class infStackProb {
         int[] ans = new int[n]; // 결과를 저장할 배열
         Stack<int[]> stack = new Stack<>(); // 스택: {day, temp} 형태로 저장
 
+        /*
+        2중 for문은 무조건 for문을 반복 하기 때문에 o(n^2)가 맞지만,
+        아래 코드는 while문의 총 실행 결과가 n번이기 때문에 o(n)이 된다.
+         */
         for (int curDay = 0; curDay < n; curDay++) {
             int curTemp = temperatures[curDay];
 
