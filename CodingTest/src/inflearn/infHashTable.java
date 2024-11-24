@@ -21,6 +21,8 @@ public class infHashTable {
             ㄴ 문자열로는 인덱스를 지정 불가하기 때문에 해쉬테이블 사용
 
         HashTable(파이썬 Dictionary)는 메모리를 사용하는거기 때문에 시간복잡도를 많이 줄여 줄 수 있음.
+
+        HashTable의 사용 용도는 반복문을 돌면서 원하는 숫자가 테이블 안에 존재하는지 알기 위해 사용
         */
 
         // HashTable 생성
