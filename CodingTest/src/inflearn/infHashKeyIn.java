@@ -14,6 +14,7 @@ public class infHashKeyIn {
         int longest = 0;
 
         //hash 키 값에 값을 넣어줌, 키 값은 중복을 허용하지 않기 때문에 4 5 6 7 100이 HashTable에 들어감
+        //Value값을 넣는게 귀찮다면 HashSet을 사용하여 풀이해도 됨.
         hash.put(6, 1);
         hash.put(7, 1);
         hash.put(100, 1);
@@ -21,9 +22,9 @@ public class infHashKeyIn {
         hash.put(4, 1);
         hash.put(4, 1);
 
-        for(int key : hash.keySet()){
+        for(int key : hash.keySet()){ //o(n)
             int kVal = key - 1;
-            if(!hash.containsKey(kVal)){//key 값의 연속된 이전 수가 없으면
+            if(!hash.containsKey(kVal)){//key 값의 연속된 이전 수가 없으면, if에서 조건을 걸기 때문에 아래 while의 시간 복잡도는 o(1)
                 int count = 1; //본인포함 연속된 수 1
                 int target = key + 1; //target은 키 값에 연속된 수로 설정
                 while(hash.containsKey(target)){ //만약 target값이 테이블에 있을 경우
