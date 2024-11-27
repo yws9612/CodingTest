@@ -21,10 +21,8 @@ public class infPostorder {
         tree.root.lc.rc.rc = new infNode(4);
         tree.root.rc.lc = new infNode(0);
         tree.root.rc.rc = new infNode(8);
-
-        infPostorder result = new infPostorder();
         
-        System.out.println(result.dfs(tree.root, 6, 4).value);
+        System.out.println(tree.dfs(tree.root, 6, 4).value);
     }
 
     public infNode dfs(infNode node, int p, int q){

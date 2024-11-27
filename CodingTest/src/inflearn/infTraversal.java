@@ -22,7 +22,7 @@ public class infTraversal {
         Queue<infNode> q = new LinkedList<>();
         q.offer(node);
         //함수 선언구부터 해당 주석까지는 외울 것
-        while(q.isEmpty()){
+        while(!q.isEmpty()){
             infNode c_Node = q.poll();
             //출력 필요 시 System.out.print(c_Node.value + " "); 추가
             visited.add(c_Node.value);
