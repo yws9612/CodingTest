@@ -13,16 +13,18 @@ public class infTraversal {
 
     }
 
-    public LinkedList BFS(infNode Node){
+    //BFS는 레벨 별 탐색
+    public LinkedList bfs(infNode node){
         LinkedList<Integer> visited = new LinkedList<>();
-        if (Node == null){
+        if (node == null){
             return visited;
         }
         Queue<infNode> q = new LinkedList<>();
-        q.offer(Node);
+        q.offer(node);
         //함수 선언구부터 해당 주석까지는 외울 것
         while(q.isEmpty()){
             infNode c_Node = q.poll();
+            //출력 필요 시 System.out.print(c_Node.value + " "); 추가
             visited.add(c_Node.value);
 
             if(c_Node.lc != null){
@@ -35,4 +37,16 @@ public class infTraversal {
         }
         return visited;
     }
+
+    //DFS는 Height 우선 순위로 탐색. 스택, 재귀함수로 구현 가능하며 보통 재귀함수를 사용하여 구현
+    public void dfs (infNode node){
+        if (node == null){ //재귀 BaseCase
+            return;
+        }else{
+            //데이터 출력이 필요하면 System.out.println(node.value + " "); 추가
+            dfs(node.lc);
+            dfs(node.rc);
+        }
+    }
+
 }
