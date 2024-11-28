@@ -47,10 +47,13 @@ public class infGraphTest1 {
                    ]
 
          2차원 배열이기에 2중 for문을 사용하여 grid[i][j] == 1 && !visited 일 경우 bfs 실행
+
+         접근 방식만 생각하면 bfs, dfs는 템플릿이 있기 때문에 큰 문제 없다.
+
          */
         infGraphTest1 main = new infGraphTest1();
 
-        for(int i = 0; i < row; i++){
+        for(int i = 0; i < row; i++){//접근 방식 코드
             for(int j = 0; j < col; j++){
                 if(graph[i][j] == 1 && !visited[i][j]){//명시적 그래프의 값이 1(땅)이고, 방문되지 않은곳이면
                     main.bfs(i, j);
