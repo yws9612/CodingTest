@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package example;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
