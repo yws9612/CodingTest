@@ -8,6 +8,12 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Baek11725 {
+    /*
+    graph[x][y] = graph[y][x] = 1
+    과
+    tree.get(x).add(y)
+    tree.get(y).add(x)는 같은 코드임. 헷갈리지 말고 둘 다 쓸줄 알 것!
+     */
 
     static int parentNode [];
     static int N;
