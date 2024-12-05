@@ -2,6 +2,8 @@ package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Baek1012 {
@@ -43,6 +45,15 @@ public class Baek1012 {
             for(int k = 0; k < m; k ++){
                 for(int l = 0; l < z; l++){
                     if(!visited[k][l] && graph[k][l] == 1){
+                        bfs(k, l);
+                        result++;
+                    }
+                }
+            }
+
+            for(int k = 0; k < m; k ++){
+                for(int l = 0; l < z; l++){
+                    if(!visited[k][l] && graph[k][l] == 1){
                         dfs(k, l);
                         result++;
                     }
@@ -62,6 +73,30 @@ public class Baek1012 {
             if((cur_x >= 0 && cur_x < m) && (cur_y >= 0 && cur_y < z)){
                 if(!visited[cur_x][cur_y] && graph[cur_x][cur_y] == 1){
                     dfs(cur_x, cur_y);
+                }
+            }
+        }
+    }
+
+    public static void bfs(int x, int y){
+        Queue<int []> q = new LinkedList<>();
+        visited[x][y] = true;
+        q.offer(new int[] {x,y});
+
+        while(!q.isEmpty()){
+            int poll [] = q.poll();
+            int cur_x = poll[0];
+            int cur_y = poll[1];
+
+            for(int i = 0; i < dx.length; i++){
+                int next_x = cur_x + dx[i];
+                int next_y = cur_y + dy[i];
+
+                if((next_x >= 0 && next_x < m) && (next_y >= 0 && next_y < z)){
+                    if(!visited[next_x][next_y] && graph[next_x][next_y] == 1){
+                        visited[next_x][next_y] = true;
+                        q.offer(new int[] {next_x, next_y});
+                    }
                 }
             }
         }
